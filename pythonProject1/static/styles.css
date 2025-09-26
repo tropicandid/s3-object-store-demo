@@ -1,0 +1,182 @@
+/* === Light Theme (default, earth tones) === */
+:root {
+  --color-bg: #faf8f5;         /* warm light background */
+  --color-text: #2e2a27;       /* dark brown/charcoal */
+  --color-muted: #6b5e54;      /* muted taupe/gray-brown */
+  --color-border: #d8cfc4;     /* soft beige border */
+  --color-card: #ffffff;       /* white card bg */
+
+  --color-primary: #8b5e3c;    /* warm brown */
+  --color-primary-hover: #6f482c;
+  --color-accent: #a17c5b;     /* clay/tan */
+  --color-accent-hover: #8b684d;
+  --color-highlight: #c4a484;  /* sand highlight */
+
+  --radius: 0.5rem;
+  --shadow: 0 1px 2px rgba(0,0,0,0.08);
+
+  --page-padding: 1.5rem;
+  --container-width: 1200px;
+}
+
+/* === Dark Theme (soil + moss tones) === */
+html[data-theme="dark"] {
+  --color-bg: #1e1b18;         /* soil black/brown */
+  --color-text: #e8e3dc;       /* parchment */
+  --color-muted: #a89f95;      /* muted beige-gray */
+  --color-border: #3c342e;     /* deep brown-gray */
+  --color-card: #27231f;       /* slightly lighter soil */
+
+  --color-primary: #6f9d76;    /* moss green */
+  --color-primary-hover: #5a7f5f;
+  --color-accent: #b48a78;     /* clay accent */
+  --color-accent-hover: #9d7565;
+  --color-highlight: #3a332d;  /* subtle highlight for tables/cards */
+}
+
+/* === Base Reset & Defaults === */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+/* === Layout Containers === */
+.page {
+  padding: var(--page-padding);
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--page-padding);
+}
+
+/* === Headings === */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 0.5em;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--color-text);
+}
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.25rem; }
+h4 { font-size: 1.125rem; }
+h5 { font-size: 1rem; }
+h6 { font-size: 0.875rem; color: var(--color-muted); }
+
+/* === Links === */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+a:hover {
+  color: var(--color-primary-hover);
+  text-decoration: underline;
+}
+
+/* === Buttons === */
+button,
+input[type="submit"],
+input[type="button"] {
+  appearance: none;
+  border: none;
+  border-radius: var(--radius);
+  background-color: var(--color-primary);
+  color: #fff;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  box-shadow: var(--shadow);
+}
+button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {
+  background-color: var(--color-primary-hover);
+}
+button:active {
+  transform: scale(0.97);
+}
+
+/* === Forms === */
+input,
+textarea,
+select {
+  width: 100%;
+  max-width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  background-color: #fff;
+  color: var(--color-text);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+html[data-theme="dark"] input,
+html[data-theme="dark"] textarea,
+html[data-theme="dark"] select {
+  background-color: var(--color-card);
+  color: var(--color-text);
+}
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(161, 124, 91, 0.3);
+}
+
+/* === Tables === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+th, td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+th {
+  background-color: var(--color-highlight);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* === Lists === */
+ul, ol {
+  padding-left: 1.5rem;
+  margin: 0.5rem 0 1rem;
+}
+
+/* === Cards / Containers === */
+.card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  box-shadow: var(--shadow);
+}
+
+/* === Utility Spacing === */
+p {
+  margin: 0 0 1rem;
+}

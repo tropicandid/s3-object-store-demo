@@ -1,0 +1,11 @@
+# Python specific
+venv/
+.venv/
+instance/
+__pycache__/*
+.idea/
+
+# Misc
+env/
+ENV/
+*.log
