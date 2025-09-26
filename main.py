@@ -76,6 +76,7 @@ class LoginForm(FlaskForm):
     submit = SubmitField('Login')
 
 ########################## ROUTING LOGIC ##########################
+#TODO: This also needs to be moved into it's own directory
 @app.route('/')
 def index():
     return render_template('index.html')
